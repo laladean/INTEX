@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -7,23 +8,25 @@ using System.Collections.Generic;
 
 namespace INTEX.Models
 {
-    public partial class C14
+    public partial class c14
     {
-        public long Id { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; }
-        public int? Size { get; set; }
-        public int? Agebp { get; set; }
-        public int? Calibratedspan { get; set; }
-        public int? Tubenumber { get; set; }
-        public int? Calibrateddatemin { get; set; }
-        public int? Calibrateddateavg { get; set; }
-        public string Foci { get; set; }
-        public int? Rack { get; set; }
-        public int? Calendardate { get; set; }
-        public int? Calibrateddatemax { get; set; }
-        public string C14lab { get; set; }
-        public string Questions { get; set; }
-        public string Location { get; set; }
+        [Key]
+        [Required]
+        public long id { get; set; }
+        public string description { get; set; }
+        public string category { get; set; }
+        public int? size { get; set; }
+        public int? agebp { get; set; }
+        public int? calibratedspan { get; set; }
+        public int? tubenumber { get; set; }
+        public int? calibrateddatemin { get; set; }
+        public int? calibrateddateavg { get; set; }
+        public string foci { get; set; }
+        public int? rack { get; set; }
+        public int? calendardate { get; set; }
+        public int? calibrateddatemax { get; set; }
+        public string c14lab { get; set; }
+        public string questions { get; set; }
+        public string location { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -7,35 +8,52 @@ using System.Collections.Generic;
 
 namespace INTEX.Models
 {
-    public partial class Bodyanalysischart
+    public partial class bodyanalysischart
     {
-        public long Id { get; set; }
-        public string Femur { get; set; }
-        public string Humerusheaddiameter { get; set; }
-        public string Squamossuture { get; set; }
-        public string CariesPeriodontalDisease { get; set; }
-        public string MedicalIpRamus { get; set; }
-        public int? Perservationindex { get; set; }
-        public string Gonion { get; set; }
-        public int? Humeruslength { get; set; }
-        public int? Femurlength { get; set; }
-        public string Lambdoidsuture { get; set; }
-        public bool? Ventralarc { get; set; }
-        public int? Tootheruptionageestimation { get; set; }
-        public string Nuchalcrest { get; set; }
-        public int? Estimatestature { get; set; }
-        public string Notes { get; set; }
-        public string Osteophytosis { get; set; }
-        public string Subpubicangle { get; set; }
-        public bool? Robust { get; set; }
-        public string Femurheaddiameter { get; set; }
-        public string Sciaticnotch { get; set; }
-        public string Supraorbitalridges { get; set; }
-        public string Orbitedge { get; set; }
-        public int? Toothattrition { get; set; }
-        public string Sphenooccipitalsynchondrosis { get; set; }
-        public bool? Parietalblossing { get; set; }
-        public string Observations { get; set; }
-        public string Humerus { get; set; }
+        [Key]
+        [Required]
+        public string squarenorthsouth { get; set; }
+       
+        public string northsouth { get; set; }
+       
+        public string squareeastwest { get; set; }
+       
+        public string eastwest { get; set; }
+       
+        public string area { get; set; }
+       
+        public int burialnumber { get; set; }
+     
+        public string dateofexamination { get; set; }
+        public int? preservationindex { get; set; }
+        public string haircolor { get; set; }
+        public string observations { get; set; }
+        public string robust { get; set; }
+        public string supraorbitalridges { get; set; }
+        public string orbitedge { get; set; }
+        public string parietalbossing { get; set; }
+        public string gonion { get; set; }
+        public string nuchalcrest { get; set; }
+        public string zygomaticcrest { get; set; }
+        public string sphenooccipitalsynchondrosis { get; set; }
+        public string lamboidsuture { get; set; }
+        public string squamossuture { get; set; }
+        public string toothattrition { get; set; }
+        public string tootheruption { get; set; }
+        public string tootheruptionageestimate { get; set; }
+        public string ventralarc { get; set; }
+        public string subpubicangle { get; set; }
+        public string sciaticnotch { get; set; }
+        public string pubicbone { get; set; }
+        public string medialipramus { get; set; }
+        public string femur { get; set; }
+        public string humerus { get; set; }
+        public string femurheaddiameter { get; set; }
+        public string humerusheaddiameter { get; set; }
+        public decimal? femurlength { get; set; }
+        public decimal? humeruslength { get; set; }
+        public string osteophytosis { get; set; }
+        public string cariesperiodontaldisease { get; set; }
+        public string notes { get; set; }
     }
 }

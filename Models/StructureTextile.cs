@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -7,9 +8,11 @@ using System.Collections.Generic;
 
 namespace INTEX.Models
 {
-    public partial class StructureTextile
+    public partial class structuretextile
     {
-        public long MainStructureid { get; set; }
-        public long MainTextileid { get; set; }
+       
+        public long mainstructureid { get; set; }
+   
+        public long maintextileid { get; set; }
     }
 }

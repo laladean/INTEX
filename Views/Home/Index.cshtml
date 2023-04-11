@@ -1,0 +1,21 @@
+﻿@model List<burialmain>
+
+<h1>Burials</h1>
+
+@foreach (burialmain bm in Model) 
+{
+    <h3>Burial ID: @bm.squarenorthsouth@bm.northsouth@bm.squareeastwest@bm.eastwest@bm.area@bm.burialnumber</h3>
+
+    <ul>
+        <li>Head Direction: @bm.headdirection</li>
+        <li>Sex: @bm.sex</li>
+        <li>Hair Color: @bm.haircolor</li>
+        @*<li>Textile color: @bm.textile</li>
+    Texttile structure
+    <li>Estimate Stature: @bm.s</li>*@
+        <li>Age at death: @bm.ageatdeath</li>
+        @*<li>Textile Function: @bm.</li>*@
+   
+            
+    </ul>
+}

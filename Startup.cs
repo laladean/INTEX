@@ -1,4 +1,5 @@
 using INTEX.Data;
+using INTEX.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,17 +14,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Npgsql;
+
 
 namespace INTEX
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; set; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+       
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -34,6 +38,12 @@ namespace INTEX
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
+
+
+            services.AddControllersWithViews();
+            services.AddDbContext<intex2Context>(options =>
+            options.UseNpgsql(Configuration.GetConnectionString("IntexConnection")));
+
             services.Configure<IdentityOptions>(options =>
             {
                 // Default Password settings.
@@ -91,6 +101,7 @@ namespace INTEX
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapDefaultControllerRoute();
                 endpoints.MapRazorPages();
             });
         }
