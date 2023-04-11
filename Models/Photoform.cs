@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -7,18 +8,20 @@ using System.Collections.Generic;
 
 namespace INTEX.Models
 {
-    public partial class Photoform
+    public partial class photoform
     {
-        public long Id { get; set; }
-        public string Area { get; set; }
-        public string Squarenorthsouth { get; set; }
-        public string Tableassociation { get; set; }
-        public string Filename { get; set; }
-        public string Photographer { get; set; }
-        public string Burialnumber { get; set; }
-        public string Squareeastwest { get; set; }
-        public string Eastwest { get; set; }
-        public string Northsouth { get; set; }
-        public DateTime? Photodate { get; set; }
+        [Key]
+        [Required]
+        public long id { get; set; }
+        public string area { get; set; }
+        public string squarenorthsouth { get; set; }
+        public string tableassociation { get; set; }
+        public string filename { get; set; }
+        public string photographer { get; set; }
+        public string burialnumber { get; set; }
+        public string squareeastwest { get; set; }
+        public string eastwest { get; set; }
+        public string northsouth { get; set; }
+        public DateTime? photodate { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -7,23 +8,25 @@ using System.Collections.Generic;
 
 namespace INTEX.Models
 {
-    public partial class Cranium
+    public partial class cranium
     {
-        public long Id { get; set; }
-        public decimal? InterobitalBreadth { get; set; }
-        public decimal? MaxNasalBreadth { get; set; }
-        public decimal? BasionNasion { get; set; }
-        public decimal? InterorbitalBreadth { get; set; }
-        public decimal? NasionProsthionUpper { get; set; }
-        public decimal? NasoAlphaSubtense { get; set; }
-        public decimal? BasionBregmaHeight { get; set; }
-        public decimal? Maxcraniumlength { get; set; }
-        public decimal? InterorbitalSubtense { get; set; }
-        public decimal? BasionProsthionLength { get; set; }
-        public decimal? AlphaCore { get; set; }
-        public decimal? MidOrbitalSubtense { get; set; }
-        public decimal? Maxcraniumbreadth { get; set; }
-        public decimal? BizygomaticDiameter { get; set; }
-        public decimal? MidOrbitalBreadth { get; set; }
+        [Key]
+        [Required]
+        public long id { get; set; }
+        public decimal? interobitalbreadth { get; set; }
+        public decimal? maxnasalbreadth { get; set; }
+        public decimal? basionnasion { get; set; }
+        public decimal? interorbitalbreadth { get; set; }
+        public decimal? nasionprosthionupper { get; set; }
+        public decimal? nasoalphasubtense { get; set; }
+        public decimal? basionbregmaheight { get; set; }
+        public decimal? maxcraniumlength { get; set; }
+        public decimal? interorbitalsubtense { get; set; }
+        public decimal? basionprosthionlength { get; set; }
+        public decimal? alphacore { get; set; }
+        public decimal? midorbitalsubtense { get; set; }
+        public decimal? maxcraniumbreadth { get; set; }
+        public decimal? bizygomaticdiameter { get; set; }
+        public decimal? midorbitalbreadth { get; set; }
     }
 }

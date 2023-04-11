@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -7,15 +8,17 @@ using System.Collections.Generic;
 
 namespace INTEX.Models
 {
-    public partial class Biological
+    public partial class biological
     {
-        public long Id { get; set; }
-        public int? Racknumber { get; set; }
-        public int? Bagnumber { get; set; }
-        public string Previouslysampled { get; set; }
-        public string Initials { get; set; }
-        public int? Clusternumber { get; set; }
-        public DateTime? Date { get; set; }
-        public string Notes { get; set; }
+        [Key]
+        [Required]
+        public long id { get; set; }
+        public int? racknumber { get; set; }
+        public int? bagnumber { get; set; }
+        public string previouslysampled { get; set; }
+        public string initials { get; set; }
+        public int? clusternumber { get; set; }
+        public DateTime? date { get; set; }
+        public string notes { get; set; }
     }
 }
