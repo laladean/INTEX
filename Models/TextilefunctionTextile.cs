@@ -8,10 +8,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace INTEX.Models
 {
-    public partial class textilefunctionTextile
+    public partial class textilefunctiontextile
     {
-        [Key]
-        [Required]
+       
         public long maintextilefunctionid { get; set; }
        
         public long maintextileid { get; set; }

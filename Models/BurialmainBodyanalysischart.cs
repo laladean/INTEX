@@ -10,8 +10,7 @@ namespace INTEX.Models
 {
     public partial class burialmainbodyanalysischart
     {
-        [Key]
-        [Required]
+        
         public long mainburialmainid { get; set; }
        
         public long mainbodyanalysischartid { get; set; }

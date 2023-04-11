@@ -10,8 +10,7 @@ namespace INTEX.Models
 {
     public partial class artifactkomaushimregisterburialmain
     {
-        [Key]
-        [Required]
+        
         public long mainartifactkomaushimregisterid { get; set; }
        
         public long mainburialmainid { get; set; }

@@ -10,8 +10,7 @@ namespace INTEX.Models
 {
     public partial class burialmainbiological
     {
-        [Key]
-        [Required]
+     
         public long mainburialmainid { get; set; }
       
         public long mainbiologicalid { get; set; }

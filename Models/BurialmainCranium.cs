@@ -10,8 +10,7 @@ namespace INTEX.Models
 {
     public partial class burialmaincranium
     {
-        [Key]
-        [Required]
+       
         public long mainburialmainid { get; set; }
        
         public long maincraniumid { get; set; }

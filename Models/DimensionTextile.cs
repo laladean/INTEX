@@ -10,8 +10,7 @@ namespace INTEX.Models
 {
     public partial class dimensiontextile
     {
-        [Key]
-        [Required]
+        
         public long maindimensionid { get; set; }
         public long maintextileid { get; set; }
     }

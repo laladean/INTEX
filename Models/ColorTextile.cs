@@ -10,8 +10,7 @@ namespace INTEX.Models
 {
     public partial class colortextile
     {
-        [Key]
-        [Required]
+       
         public long maincolorid { get; set; }
        
         public long maintextileid { get; set; }

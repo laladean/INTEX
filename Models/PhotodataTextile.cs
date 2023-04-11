@@ -10,8 +10,7 @@ namespace INTEX.Models
 {
     public partial class photodatatextile
     {
-        [Key]
-        [Required]
+       
         public long mainphotodataid { get; set; }
         
         public long maintextileid { get; set; }

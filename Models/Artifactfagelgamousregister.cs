@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace INTEX.Models
 {
-    public partial class Artifactfagelgamousregister
+    public partial class artifactfagelgamousregister
     {
         [Key]
         [Required]

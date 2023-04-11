@@ -10,8 +10,7 @@ namespace INTEX.Models
 {
     public partial class yarnmanipulationtextile
     {
-        [Key]
-        [Required]
+     
         public long mainyarnmanipulationid { get; set; }
         public long maintextileid { get; set; }
     }
