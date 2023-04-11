@@ -58,6 +58,13 @@ namespace INTEX
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Add("Content-Security-Policy", "default-src-elem 'self'; script-src 'unsafe-inline'; style-src 'self'; font-src 'self'; image-src 'self'; frame-src 'self'");
+
+                await next();
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
