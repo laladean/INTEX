@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
+using System.Net;
 
 
 namespace INTEX
@@ -103,18 +104,32 @@ namespace INTEX
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("hair",
-                    "{hairColor}",
-                    new { Controller = "Home", action = "Home/Burials", pageNum = 1 });
+
+               
+                
 
                 endpoints.MapControllerRoute("hairpage",
-                    "{hairColor}/{pageNum}",
-                    new { Controller = "Home", action = "Home/Burials" });
+                    "Burials/{hairColor}/{pageNum?}",
+                    new { Controller = "Home", action = "Burials"});
+
+
+                endpoints.MapControllerRoute("hairagepage",
+                    "Burials/{hairColor}/{ageAtDeath}/{burialDepth}/{pageNum?}",
+                    new { Controller = "Home", action = "Burials" });
+
+
+                endpoints.MapControllerRoute("Burials",
+                   "Burials",
+                   new { Controller = "Home", action = "Burials" });
 
                 endpoints.MapControllerRoute("Paging",
-                   "{pageNum}",
-                   new { Controller = "Home", action = "Home/Burials" });
+                   "Burials/{pageNum?}",
+                   new { Controller = "Home", action = "Burials"});
 
+                
+
+
+                
                 
 
                 

@@ -14,28 +14,42 @@ namespace INTEX.Controllers
             repo = temp;
         }
 
-        public IActionResult Burials(string hairColor, string ageAtDeath, int pageNum = 1)
+        public IActionResult Burials(string hairColor, string ageAtDeath, string burialDepth, int pageNum = 1)
         {
             int pageSize = 100;
 
             var x = new BurialsViewModel
             {
                 burials = repo.burialmain
-                .Where(b => b.haircolor == hairColor || hairColor == null)
-                .Where(b => b.ageatdeath == ageAtDeath || ageAtDeath == null)
+                .Where(b => (hairColor == null || b.haircolor == hairColor) &&
+                (ageAtDeath == null || b.ageatdeath == ageAtDeath) &&
+                (burialDepth == null || b.depth == burialDepth))
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize),
 
                 PageInfo = new PageInfo
                 {
-                    TotalProjects = repo.burialmain.Count(),
+                    TotalProjects =
+                    ((hairColor == null && ageAtDeath == null)
+                    ? repo.burialmain.Count()
+                    : repo.burialmain
+                        .Where(b => (hairColor == null || b.haircolor == hairColor) && 
+                        (ageAtDeath == null || b.ageatdeath == ageAtDeath) && 
+                        (burialDepth == null || b.depth == burialDepth))
+                        .Count()),
                     ProjectsPerPage = pageSize,
                     CurrentPage = pageNum
                 }
+
             };
                 
             
             return View(x);
+        }
+
+        public IActionResult BurialDetail()
+        {
+            return View();
         }
     }
 }

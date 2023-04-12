@@ -14,6 +14,8 @@ namespace INTEX.Components
         }
         public IViewComponentResult Invoke()
         {
+            ViewBag.SelectedAOD = RouteData?.Values["ageAtDeath"];
+
             var aod = repo.burialmain.Select(x => x.ageatdeath)
                 .Distinct()
                 .OrderBy(x => x);
