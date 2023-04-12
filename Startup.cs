@@ -35,10 +35,15 @@ namespace INTEX
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+
             services.AddRazorPages();
 
+            
 
             services.AddControllersWithViews();
             services.AddDbContext<intex2Context>(options =>
@@ -94,7 +99,7 @@ namespace INTEX
 
             app.Use(async (context, next) =>
             {
-                context.Response.Headers.Add("Content-Security-Policy", "default-src-elem 'self'; script-src 'unsafe-inline'; style-src 'self'; font-src 'self'; image-src 'self'; frame-src 'self'");
+                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src-elem 'unsafe-inline'; style-src 'self'; font-src 'self'; frame-src 'self'");
 
                 await next();
             });
@@ -102,6 +107,8 @@ namespace INTEX
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+
+
                 endpoints.MapRazorPages();
             });
         }
