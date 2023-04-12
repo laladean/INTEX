@@ -44,6 +44,8 @@ namespace INTEX
             services.AddDbContext<intex2Context>(options =>
             options.UseNpgsql(Configuration.GetConnectionString("IntexConnection")));
 
+            services.AddScoped<IIntexRepository, EFIntexRepository>();
+
             services.Configure<IdentityOptions>(options =>
             {
                 // Default Password settings.
@@ -101,6 +103,25 @@ namespace INTEX
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("hair",
+                    "{hairColor}",
+                    new { Controller = "Home", action = "Home/Burials", pageNum = 1 });
+
+                endpoints.MapControllerRoute("hairpage",
+                    "{hairColor}/{pageNum}",
+                    new { Controller = "Home", action = "Home/Burials" });
+
+                endpoints.MapControllerRoute("Paging",
+                   "{pageNum}",
+                   new { Controller = "Home", action = "Home/Burials" });
+
+                
+
+                
+
+
+
+
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapRazorPages();
             });

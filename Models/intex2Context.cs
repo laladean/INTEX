@@ -19,41 +19,41 @@ namespace INTEX.Models
         {
         }
 
-        public   DbSet<analysis> Analysis { get; set; }
-        public   DbSet<analysistextile> AnalysisTextile { get; set; }
-        public   DbSet<artifactfagelgamousregister> Artifactfagelgamousregister { get; set; }
-        public   DbSet<artifactfagelgamousregisterburialmain> ArtifactfagelgamousregisterBurialmain { get; set; }
-        public   DbSet<artifactkomaushimregister> Artifactkomaushimregister { get; set; }
-        public   DbSet<artifactkomaushimregisterburialmain> ArtifactkomaushimregisterBurialmain { get; set; }
-        public   DbSet<biological> Biological { get; set; }
-        public   DbSet<biologicalc14> BiologicalC14 { get; set; }
-        public   DbSet<bodyanalysischart> Bodyanalysischart { get; set; }
-        public   DbSet<books> Books { get; set; }
+        public   DbSet<analysis> analysis { get; set; }
+        public   DbSet<analysistextile> analysistextile { get; set; }
+        public   DbSet<artifactfagelgamousregister> artifactfagelgamousregister { get; set; }
+        public   DbSet<artifactfagelgamousregisterburialmain> artifactfagelgamousregisterburialmain { get; set; }
+        public   DbSet<artifactkomaushimregister> artifactkomaushimregister { get; set; }
+        public   DbSet<artifactkomaushimregisterburialmain> artifactkomaushimregisterburialmain { get; set; }
+        public   DbSet<biological> biological { get; set; }
+        public   DbSet<biologicalc14> biologicalc14 { get; set; }
+        public   DbSet<bodyanalysischart> bodyanalysischart { get; set; }
+        public   DbSet<books> books { get; set; }
         public   DbSet<burialmain> burialmain { get; set; }
-        public   DbSet<burialmainbiological> BurialmainBiological { get; set; }
-        public   DbSet<burialmainbodyanalysischart> BurialmainBodyanalysischart { get; set; }
-        public   DbSet<burialmaincranium> BurialmainCranium { get; set; }
-        public   DbSet<burialmaintextile> BurialmainTextile { get; set; }
-        public   DbSet<c14> C14 { get; set; }
-        public   DbSet<color> Color { get; set; }
-        public   DbSet<colortextile> ColorTextile { get; set; }
-        public   DbSet<cranium> Cranium { get; set; }
-        public   DbSet<decoration> Decoration { get; set; }
-        public   DbSet<decorationtextile> DecorationTextile { get; set; }
-        public   DbSet<dimension> Dimension { get; set; }
-        public   DbSet<dimensiontextile> DimensionTextile { get; set; }
-        public   DbSet<newsarticle> Newsarticle { get; set; }
-        public   DbSet<photodata> Photodata { get; set; }
-        public   DbSet<photodatatextile> PhotodataTextile { get; set; }
-        public   DbSet<photoform> Photoform { get; set; }
-        public   DbSet<structure> Structure { get; set; }
-        public   DbSet<structuretextile> StructureTextile { get; set; }
-        public   DbSet<teammember> Teammember { get; set; }
-        public   DbSet<textile> Textile { get; set; }
-        public   DbSet<textilefunction> Textilefunction { get; set; }
-        public   DbSet<textilefunctiontextile> TextilefunctionTextile { get; set; }
-        public   DbSet<yarnmanipulation> Yarnmanipulation { get; set; }
-        public   DbSet<yarnmanipulationtextile> YarnmanipulationTextile { get; set; }
+        public   DbSet<burialmainbiological> burialmainbiological { get; set; }
+        public   DbSet<burialmainbodyanalysischart> burialmainbodyanalysischart { get; set; }
+        public   DbSet<burialmaincranium> burialmaincranium { get; set; }
+        public   DbSet<burialmaintextile> burialmaintextile { get; set; }
+        public   DbSet<c14> c14 { get; set; }
+        public   DbSet<color> color { get; set; }
+        public   DbSet<colortextile> colortextile { get; set; }
+        public   DbSet<cranium> cranium { get; set; }
+        public   DbSet<decoration> decoration { get; set; }
+        public   DbSet<decorationtextile> decorationtextile { get; set; }
+        public   DbSet<dimension> dimension { get; set; }
+        public   DbSet<dimensiontextile> dimensiontextile { get; set; }
+        public   DbSet<newsarticle> newsarticle { get; set; }
+        public   DbSet<photodata> photodata { get; set; }
+        public   DbSet<photodatatextile> photodatatextile { get; set; }
+        public   DbSet<photoform> photoform { get; set; }
+        public   DbSet<structure> structure { get; set; }
+        public   DbSet<structuretextile> structuretextile { get; set; }
+        public   DbSet<teammember> teammember { get; set; }
+        public   DbSet<textile> textile { get; set; }
+        public   DbSet<textilefunction> textilefunction { get; set; }
+        public   DbSet<textilefunctiontextile> textilefunctiontextile { get; set; }
+        public   DbSet<yarnmanipulation> yarnmanipulation { get; set; }
+        public   DbSet<yarnmanipulationtextile> yarnmanipulationtextile { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
