@@ -1,13 +1,22 @@
 ﻿@model BurialsViewModel
 
-<h1>Burials</h1>
+<div class="row">
+    <div class="col-3">
+        <vc:hc></vc:hc>
+        <vc:aod></vc:aod>
+        <vc:bd></vc:bd>
+    </div>
+    <div class="col-9">
+        <h1>Burials</h1>
 
+        @foreach (burialmain bm in Model.burials)
+        {
+            <partial name="BurialSummary" model="bm" />
+        }
 
-@foreach (burialmain bm in Model.burials)
-{
-    <partial name="BurialSummary" model="bm"/>
-}
+        <div page-model="@Model.PageInfo" page-action="Burials" page-class="btn"
+             page-class-normal="btn-outline-dark" page-class-selected="btn-primary" page-classes-enabled="true"
+             class="btn-group pull-right m-1"></div>
+    </div>
+</div>
 
-<div page-model="@Model.PageInfo" page-action="Burials" page-class="btn"
-page-class-normal="btn-outline-dark" page-class-selected="btn-primary" page-classes-enabled="true"
-class="btn-group pull-right m-1"></div>

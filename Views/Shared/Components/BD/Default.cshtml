@@ -1,0 +1,14 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<string>
+
+@foreach (string bd in Model)
+{
+    <a asp-controller="Home" asp-action="Burials" asp-route-burialDepth="@bd" asp-route-pageNum="1"
+       class="btn @(ViewBag.SelectedBD == bd ? "btn-primary" : "btn-outline-secondary")">@bd</a>
+    <br />
+}

@@ -47,5 +47,6 @@ namespace INTEX.Models
         public string fieldbookexcavationyear { get; set; }
         public string clusternumber { get; set; }
         public string shaftnumber { get; set; }
+        public string burialidcomp { get; set; }
     }
 }

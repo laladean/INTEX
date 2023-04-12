@@ -4,23 +4,24 @@ using System.Linq;
 
 namespace INTEX.Components
 {
-    public class HCViewComponent : ViewComponent
+    public class BDViewComponent : ViewComponent
     {
         private IIntexRepository repo { get; set; }
-        public HCViewComponent (IIntexRepository temp)
+        public BDViewComponent(IIntexRepository temp)
         {
             repo = temp;
         }
         public IViewComponentResult Invoke()
         {
 
-            ViewBag.SelectedHC = RouteData?.Values["hairColor"];
+            ViewBag.SelectedBD = RouteData?.Values["burialDepth"];
 
-            var hc = repo.burialmain.Select(x => x.haircolor)
+            var bd = repo.burialmain.Select(x => x.depth)
                 .Distinct()
                 .OrderBy(x => x);
 
-            return View(hc);
+            return View(bd);
         }
     }
 }
+
