@@ -4,10 +4,22 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand m-lg-2">Dusty Discoveries</span>
+        </div>
+    <div class="row m-1 p-1">
+        <div id="types" class="col-3">
+           <vc:hc></vc:hc>
+          <vc:aod></vc:aod>
+        </div>
+        <div class="col-9">
+             <div>
+                 @RenderBody()
+             </div>
+        </div>
     </div>
 </body>
 </html>
