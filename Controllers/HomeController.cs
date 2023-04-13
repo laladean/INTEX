@@ -127,5 +127,11 @@ namespace INTEX.Controllers
             return RedirectToAction("Burials");
         }
 
+
+        public IActionResult Unsupervised()
+        {
+            return View();
+        }
+
     }
 }

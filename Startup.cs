@@ -102,7 +102,7 @@ namespace INTEX
 
             app.Use(async (context, next) =>
             {
-                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src-elem 'unsafe-inline'; style-src 'self'; font-src 'self'; frame-src 'self'");
+                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src 'unsafe-inline' 'nonce-rAnd0m' https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.4.0/pyLDAvis/js/ldavis.v3.0.0.js https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js https://localhost:44308/_framework/aspnetcore-browser-refresh.js https://d3js.org/d3.v5.js https://localhost:44308/lib/jquery/dist/jquery.min.js https://localhost:44308/lib/bootstrap/dist/js/bootstrap.bundle.min.js https://localhost:44308/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18 https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.4.0/pyLDAvis/js/ldavis.v1.0.0.css https://cdn.bokeh.org/bokeh/release/bokeh-2.4.3.min.js 'sha256-pPykIWxJnaED+2MuvQdw7UmlTMo0F1Xlurq7GWKESSs=' 'sha256-gr1PlpfsuzadkPcwRuGhTlhAhpUw3MdLt+oM4IfdtyU=' 'sha256-+63GG2DRxNxf/70kqHL2bt/xA3tg/0ef107lXBpbpH0=' 'sha256-K7nQYYOKKvJV2g2mTJz790/tCykm3ZEAuiMYzV4I/Sg=' ; style-src 'unsafe-inline' 'unsafe-hashes' https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.4.0/pyLDAvis/js/ldavis.v1.0.0.css 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-7IUJ0R3PZfMkzNNqi85q9mJpBJO7c1nOmYmrbt22Has=' 'sha256-PE7w0Tsj/GKnZHFyAkLUC8LABP2dUj/jlsURwHPuZRM=' 'sha256-pvTsXv5kUs7+o2/TtrmVcqVIFBmZXmeQl0p15vGrtAo=' 'self'; connect-src wss://localhost:44397/INTEX/ 'self; font-src 'self'; frame-src 'self'");
 
                 await next();
             });
