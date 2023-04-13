@@ -2,26 +2,38 @@
 }
 
 @model burialmain
-<div class="card card-outline-primary m-1 p-1">
-    <div class="bg-faded p-1">
-        <h3>Burial ID: @Model.burialidcomp</h3>
+<div class="card m-2">
+    <div class="card-header bg-dark text-light">
+        <h5 class="mb-0">Burial ID: @Model.burialidcomp</h5>
     </div>
 
-    <div class="card-text p-1"><b>Head Direction:</b> @Model.headdirection</div>
-    <div class="card-text p-1"><b>Sex: </b>@Model.sex</div>
-    <div class="card-text p-1"><b>Hair Color: </b>@Model.haircolor</div>
-    <div class="card-text p-1"><b>Age at death: </b>@Model.ageatdeath</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+                <p><strong>Head Direction:</strong></p>
+                <p class="card-text">@Model.headdirection</p>
+            </div>
+            <div class="col-md-3">
+                <p><strong>Sex:</strong></p>
+                <p class="card-text">@Model.sex</p>
+            </div>
+            <div class="col-md-3">
+                <p><strong>Hair Color:</strong></p>
+                <p class="card-text">@Model.haircolor</p>
+            </div>
+            <div class="col-md-3">
+                <p><strong>Age at Death:</strong></p>
+                <p class="card-text">@Model.ageatdeath</p>
+            </div>
+        </div>
+    </div>
 
-    <form method="post" asp-controller="Home" asp-action="BurialDetail" asp-route-burialidcomp="@Model.burialidcomp">
-
-        <input type="hidden" asp-for="@Model.burialidcomp" />
-        <span class="card-text">
-            <button type="submit" class="btn btn-outline-dark btn-sm float-end">Details</button>
-        </span>
-    </form>
-
-    <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.burialidcomp">Edit</a>
-    <a asp-controller="Home" asp-action="Delete" asp-route-id="@Model.burialidcomp">Delete</a>
-
+    <div class="card-footer">
+        <form method="post" asp-controller="Home" asp-action="BurialDetail" asp-route-burialidcomp="@Model.burialidcomp">
+            <input type="hidden" asp-for="@Model.burialidcomp" />
+            <button type="submit" class="btn btn-outline-primary float-end">View Details</button>
+        </form>
+    </div>
 </div>
+
 
