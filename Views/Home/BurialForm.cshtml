@@ -7,15 +7,62 @@
 
 <div>
     <form method="post">
-        
-        <label>Burial ID:</label>
+        <h3>Identification Numbers</h3>
+        <br />
+        <label>id:</label>
+        <input asp-for="id" />
+        <br />
+        <label>burialid:</label>
+        <input asp-for="burialid" />
+        <br />
+        <label>burialnumber:</label>
+        <input asp-for="burialnumber" />
+        <br />
+        <label>clusternumber:</label>
+        <input asp-for="clusternumber" />
+        <br />
+        <label>burialidcomp:</label>
         <input asp-for="burialidcomp" />
         <br />
+        <br />
+        <h3>Orientation</h3>
         <label>Head Direction:</label>
         <input asp-for="headdirection" />
         <br />
+        <label>Squarenorthsouth:</label>
+        <input asp-for="squarenorthsouth" />
+        <br />
+        <label>Northsouth:</label>
+        <input asp-for="northsouth" />
+        <br />
+        <label>Squarenorthsouth:</label>
+        <input asp-for="squarenorthsouth" />
+        <br />
+        <label>Eastwest:</label>
+        <input asp-for="eastwest" />
+        <br />
+        <label>Squareeastwest:</label>
+        <input asp-for="squareeastwest" />
+        <br />
+        <label>Southtohead:</label>
+        <input asp-for="southtohead" />
+        <br />
+        <label>Westtohead:</label>
+        <input asp-for="westtohead" />
+        <br />
+        <label>southtofeet:</label>
+        <input asp-for="southtofeet" />
+        <br />
+        <label>westtofeet:</label>
+        <input asp-for="westtofeet" />
+        <br />
+        <br />
+        <h3>Mummy Information</h3>
         <label>Sex:</label>
         <input asp-for="sex" />
+        <br />
+        <label>Hair:</label>
+        <input asp-for="hair" />
         <br />
         <label>Hair Color:</label>
         <input asp-for="haircolor" />
@@ -23,7 +70,66 @@
         <label>Age at Death:</label>
         <input asp-for="ageatdeath" />
         <br />
-
-        <button type="submit">Submit Burial</button>
+        <br />
+        <label>Adult/subadult:</label>
+        <input asp-for="adultsubadult" />
+        <br />
+        <label>Facebundles:</label>
+        <input asp-for="facebundles" />
+        <br />
+        <label>Preservation:</label>
+        <input asp-for="preservation" />
+        <br />
+        <label>Goods:</label>
+        <input asp-for="goods" />
+        <br />
+        <label>Text:</label>
+        <input asp-for="text" />
+        <br />
+        <label>Wrapping:</label>
+        <input asp-for="wrapping" />
+        <br />
+        <label>Samples Collected:</label>
+        <input asp-for="samplescollected" />
+        <br />
+        <label>burialmaterials:</label>
+        <input asp-for="burialmaterials" />
+        <br />
+        <br />
+        <h3>Location</h3>
+        <label>Area:</label>
+        <input asp-for="area" />
+        <br />
+        <label>Depth:</label>
+        <input asp-for="depth" />
+        <br />
+        <label>length:</label>
+        <input asp-for="length" />
+        <br />
+        <label>shaftnumber:</label>
+        <input asp-for="shaftnumber" />
+        <br />
+        <br />
+        <h3>Documentation</h3>
+        <label>Fieldbook Excavation Year:</label>
+        <input asp-for="fieldbookexcavationyear" />
+        <br />
+        <label>Fieldbook page:</label>
+        <input asp-for="fieldbookpage" />
+        <br />
+        <label>Excavation Recorder:</label>
+        <input asp-for="excavationrecorder" />
+        <br />
+        <label>Date of Excavation:</label>
+        <input asp-for="dateofexcavation" />
+        <br />
+        <label>photos:</label>
+        <input asp-for="photos" />
+        <br />
+        <label>dataexpertinitials:</label>
+        <input asp-for="dataexpertinitials" />
+        <br />
+        <br />
+        <button class="btn btn-success" type="submit">Submit Burial</button>
     </form>
 </div>

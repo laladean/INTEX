@@ -18,6 +18,10 @@ namespace INTEX.Models
         {
             context.burialmain.Remove(bm);
         }
+        public void Update(burialmain bm)
+        {
+            context.burialmain.Update(bm);
+        }
         public void SaveChanges()
         {
             context.SaveChanges();
