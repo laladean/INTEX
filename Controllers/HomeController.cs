@@ -87,11 +87,29 @@ namespace INTEX.Controllers
             return View("Confirmation");
         }
 
+        [HttpGet]
         public IActionResult Edit (int id)
         {
             var burial = repo.burialmain.Single(x => x.id == id);
             return View("BurialForm", burial);
 
+        }
+
+        [HttpPost]
+        public IActionResult Edit (burialmain update)
+        {
+            // Makes sure required field have not been forgotten or intentionally left blank in updating
+            if (ModelState.IsValid)
+            {
+                repo.Update(update);
+                repo.SaveChanges();
+
+                return RedirectToAction("MovieList");
+            }
+            else
+            {
+                return View("MovieForm", update);
+            }
         }
 
         [HttpGet]

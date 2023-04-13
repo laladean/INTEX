@@ -10,6 +10,7 @@ namespace INTEX.Models
 
         void Add(burialmain bm);
         void Remove(burialmain bm);
+        void Update(burialmain bm);
         void SaveChanges();
 
         IQueryable<burialmain> burialmain { get; }
