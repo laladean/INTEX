@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 
 namespace INTEX.Models
 {
@@ -8,7 +8,23 @@ namespace INTEX.Models
         public EFIntexRepository (intex2Context temp)
         {
             context = temp;
+
         }
+        public void Add(burialmain bm)
+        {
+            context.burialmain.Add(bm);
+        }
+        public void Remove(burialmain bm)
+        {
+            context.burialmain.Remove(bm);
+        }
+        public void SaveChanges()
+        {
+            context.SaveChanges();
+        }
+
+        
+
         public IQueryable<burialmain> burialmain => context.burialmain;
         public IQueryable<analysis> analysis => context.analysis;
         public IQueryable<analysistextile> analysistextile => context.analysistextile;
