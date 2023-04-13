@@ -102,7 +102,7 @@ namespace INTEX
 
             app.Use(async (context, next) =>
             {
-                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src-elem 'unsafe-inline'; style-src 'self'; font-src 'self'; frame-src 'self'");
+                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src-elem 'unsafe-inline' https://localhost:44308/lib/jquery/dist/jquery.min.js https://localhost:44308/lib/bootstrap/dist/js/bootstrap.bundle.min.js https://localhost:44308/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18 https://localhost:44308/_framework/aspnetcore-browser-refresh.js; style-src 'self'; font-src 'self'; frame-src 'self'");
 
                 await next();
             });

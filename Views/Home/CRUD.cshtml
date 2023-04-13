@@ -5,27 +5,39 @@
 }
 
 @model List<burialmain>
+<div class="container">
+    <h1>Burials Database</h1>
+    <a class="btn btn-primary mb-3" asp-controller="Home" asp-action="AddBurial">Add Burial</a>
 
     <table class="table table-bordered table-hover">
-    <thead class="table-dark">
-        <tr>
-            <td>Burial ID</td>
-            <td>Head Direction</td>
-            <td>Sex</td>
-            <td>Age At Death</td>
-            <td>Burial Depth</td>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var x in Model)
-    {
-        <tr>
-            <td>@x.burialidcomp</td>
-            <td>@x.headdirection</td>
-            <td>@x.sex</td>
-            <td>@x.ageatdeath</td>
-            <td>@x.depth</td>
-        </tr>
-    }
-</tbody>
-</table>
+        <thead class="table-dark">
+            <tr>
+                <th>Burial ID</th>
+                <th>Head Direction</th>
+                <th>Sex</th>
+                <th>Age At Death</th>
+                <th>Burial Depth</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.burialidcomp</td>
+                    <td>@x.headdirection</td>
+                    <td>@x.sex</td>
+                    <td>@x.ageatdeath</td>
+                    <td>@x.depth</td>
+                    <td>
+                        <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Edit" asp-route-burialidcomp="@x.burialidcomp">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-controller="Home" asp-action="Delete" asp-route-burialidcomp="@x.burialidcomp">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

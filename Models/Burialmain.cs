@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -10,6 +11,7 @@ namespace INTEX.Models
 {
     public partial class burialmain
     {
+        [BindNever]
         public long id { get; set; }
         public string squarenorthsouth { get; set; }
         public string headdirection { get; set; }
