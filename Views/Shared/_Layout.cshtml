@@ -4,7 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css.map"/>
     <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+
+   
+
 </head>
 <body>
     <div class="bg-dark text-white p-2">
@@ -15,4 +19,10 @@
                  @RenderBody()
              </div>
 </body>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@RenderSection("Scripts", required: false)
 </html>

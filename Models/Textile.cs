@@ -21,5 +21,6 @@ namespace INTEX.Models
         public DateTime? sampledate { get; set; }
         public DateTime? photographeddate { get; set; }
         public string direction { get; set; }
+        
     }
 }
