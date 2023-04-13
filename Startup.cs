@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Npgsql;
+using System.Net;
 
 
 namespace INTEX
@@ -48,6 +49,8 @@ namespace INTEX
             services.AddControllersWithViews();
             services.AddDbContext<intex2Context>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("IntexConnection")));
+
+            services.AddScoped<IIntexRepository, EFIntexRepository>();
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -106,6 +109,39 @@ namespace INTEX
 
             app.UseEndpoints(endpoints =>
             {
+
+               
+                
+
+                endpoints.MapControllerRoute("hairpage",
+                    "Burials/{hairColor}/{pageNum?}",
+                    new { Controller = "Home", action = "Burials"});
+
+
+                endpoints.MapControllerRoute("hairagepage",
+                    "Burials/{hairColor}/{ageAtDeath}/{burialDepth}/{pageNum?}",
+                    new { Controller = "Home", action = "Burials" });
+
+
+                endpoints.MapControllerRoute("Burials",
+                   "Burials",
+                   new { Controller = "Home", action = "Burials" });
+
+                endpoints.MapControllerRoute("Paging",
+                   "Burials/{pageNum?}",
+                   new { Controller = "Home", action = "Burials"});
+
+                
+
+
+                
+                
+
+                
+
+
+
+
                 endpoints.MapDefaultControllerRoute();
 
 

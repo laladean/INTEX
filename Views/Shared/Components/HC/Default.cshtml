@@ -1,0 +1,28 @@
+﻿@model IEnumerable<string>
+
+    <div class="d-grid gap-1">
+<a asp-controller="Home" asp-action="Burials" asp-route-hairColor="" asp-route-ageAtDeath="" asp-route-pageNum="1" class="btn btn-outline-secondary">Burials</a>
+<br />
+
+
+
+@foreach (string hc in Model)
+{
+   
+
+        <a asp-controller="Home" asp-action="Burials"
+       asp-route-hairColor="@hc"
+       asp-route-ageAtDeath="@ViewBag.SelectedAgeAtDeath"
+       asp-route-burialDepth="@ViewBag.SelectedBurialDepth"
+       asp-route-bSex="@ViewBag.SelectionSex"
+       asp-route-pageNum="1"
+           class="btn @(ViewBag.SelectedAOD == hc ? "btn-primary" : "btn-outline-secondary")">@hc</a>
+        <br />
+}
+
+</div>
+
+
+
+
+

@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 
 namespace INTEX.Models
 {
@@ -23,6 +23,7 @@ namespace INTEX.Models
             context.SaveChanges();
         }
 
+        
 
         public IQueryable<burialmain> burialmain => context.burialmain;
         public IQueryable<analysis> analysis => context.analysis;
