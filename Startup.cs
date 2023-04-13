@@ -47,7 +47,7 @@ namespace INTEX
 
             services.AddControllersWithViews();
             services.AddDbContext<intex2Context>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("IntexConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("IntexConnection")));
 
             services.Configure<IdentityOptions>(options =>
             {

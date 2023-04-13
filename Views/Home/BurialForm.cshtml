@@ -1,0 +1,25 @@
+﻿@{
+}
+
+@model INTEX.Models.burialmain
+
+<h2>Enter the burial data</h2>
+
+<div>
+    <form method="post">
+        <label>Head Direction:</label>
+        <input asp-for="headdirection" />
+        <br />
+        <label>Sex:</label>
+        <input asp-for="sex" />
+        <br />
+        <label>Hair Color:</label>
+        <input asp-for="haircolor" />
+        <br />
+        <label>Age at Death:</label>
+        <input asp-for="ageatdeath" />
+        <br />
+
+        <button type="submit">Submit Burial</button>
+    </form>
+</div>
