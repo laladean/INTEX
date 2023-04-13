@@ -98,22 +98,35 @@ namespace INTEX.Controllers
             return View("Confirmation");
         }
 
-        public IActionResult Edit (string burialidcomp)
+        [HttpGet]
+        public IActionResult Edit(int id)
         {
-            var burial = repo.burialmain.SingleOrDefault(x => x.burialidcomp == burialidcomp);
+            var burial = repo.burialmain.Single(x => x.id == id);
             return View("BurialForm", burial);
 
         }
 
-        [HttpGet]
-        public IActionResult Delete (string burialidcomp)
+        [HttpPost]
+        public IActionResult Edit(burialmain update)
         {
-            var burial = repo.burialmain.SingleOrDefault(x => x.burialidcomp == burialidcomp);
-
-            if (burial == null)
+            // Makes sure required field have not been forgotten or intentionally left blank in updating
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                repo.Update(update);
+                repo.SaveChanges();
+
+                return RedirectToAction("MovieList");
             }
+            else
+            {
+                return View("MovieForm", update);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var burial = repo.burialmain.Single(x => x.id == id);
             return View(burial);
         }
 
