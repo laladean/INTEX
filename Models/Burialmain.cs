@@ -10,8 +10,6 @@ namespace INTEX.Models
 {
     public partial class burialmain
     {
-        [Key]
-        [Required]
         public long id { get; set; }
         public string squarenorthsouth { get; set; }
         public string headdirection { get; set; }
@@ -48,6 +46,7 @@ namespace INTEX.Models
         public string clusternumber { get; set; }
         public string shaftnumber { get; set; }
         [Required]
+        [Key]
         public string burialidcomp { get; set; }
     }
 }

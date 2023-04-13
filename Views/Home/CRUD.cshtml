@@ -3,3 +3,29 @@
 *@
 @{
 }
+
+@model List<burialmain>
+
+    <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <td>Burial ID</td>
+            <td>Head Direction</td>
+            <td>Sex</td>
+            <td>Age At Death</td>
+            <td>Burial Depth</td>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.burialidcomp</td>
+            <td>@x.headdirection</td>
+            <td>@x.sex</td>
+            <td>@x.ageatdeath</td>
+            <td>@x.depth</td>
+        </tr>
+    }
+</tbody>
+</table>

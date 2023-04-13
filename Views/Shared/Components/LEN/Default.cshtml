@@ -3,19 +3,21 @@
 *@
 @{
 }
-@model IEnumerable<string>
 
 <div class="d-grid gap-1">
-@foreach (string aod in Model)
+@foreach (string len in Model)
 {
+
+
     <a asp-controller="Home" asp-action="Burials"
    asp-route-hairColor="@ViewBag.SelectedHairColor"
-   asp-route-ageAtDeath="@aod"
+   asp-route-ageAtDeath="@ViewBag.SelectedAgeAtDeath"
    asp-route-burialDepth="@ViewBag.SelectedBurialDepth"
    asp-route-bSex="@ViewBag.SelectedSex"
-       asp-route-stature="@ViewBag.SelectedLength"
+   asp-route-stature="@len"
    asp-route-pageNum="1"
-       class="btn @(ViewBag.SelectedAOD == aod ? "btn-primary" : "btn-outline-secondary")">@aod</a>
+       class="btn @(ViewBag.SelectedAOD == len ? "btn-primary" : "btn-outline-secondary")">@len</a>
     <br />
 }
+
 </div>
