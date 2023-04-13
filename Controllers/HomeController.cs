@@ -150,7 +150,15 @@ namespace INTEX.Controllers
             return RedirectToAction("Burials");
         }
 
+
         public IActionResult Confirmation()
+        {
+          return View();
+        }
+
+
+        public IActionResult Unsupervised()
+
         {
             return View();
         }
