@@ -3,14 +3,38 @@
 *@
 @{
 }
-@model burialmain
+
+@model INTEX.Models.burialmain
 
 <div class="card card-outline-primary m-1 p-1">
     <div class="bg-faded p-1">
         <h3>Burial ID: @Model.burialidcomp</h3>
     </div>
 
+   
+    <div><h4>Demographics</h4></div>
     <div class="card-text p-1"><b>Head Direction:</b> @Model.headdirection</div>
     <div class="card-text p-1"><b>Sex: </b>@Model.sex</div>
     <div class="card-text p-1"><b>Hair Color: </b>@Model.haircolor</div>
     <div class="card-text p-1"><b>Age at death: </b>@Model.ageatdeath</div>
+    <br />
+    <div><h4>Measuremets</h4></div>
+    <div class="card-text p-1"><b>Depth: </b>@Model.depth</div>
+    <div class="card-text p-1"><b>Stature: </b>@Model.length m</div>
+    <br />
+    <div><h4>Buried With</h4></div>
+    <div class="card-text p-1"><b>Wrappings: </b>@Model.wrapping m</div>
+    <div class="card-text p-1"><b>Goods: </b>@Model.goods</div>
+    <div class="card-text p-1"><b>Burial Materials: </b>@Model.burialmaterials</div>
+    <br />
+    <div><h4>Location</h4></div>
+    <div class="card-text p-1"><b>Area:</b> @Model.area</div>
+    <div class="card-text p-1"><b>EastWest: </b>@Model.eastwest</div>
+    <div class="card-text p-1"><b>NorthSouth: </b>@Model.northsouth</div>
+    <div class="card-text p-1"><b>Square EastWest: </b>@Model.squareeastwest</div>
+    <div class="card-text p-1"><b>Square NorthWest:</b> @Model.squarenorthsouth</div>
+    <div class="card-text p-1"><b>South to Feet: </b>@Model.southtofeet</div>
+    <div class="card-text p-1"><b>South to Head: </b>@Model.southtohead</div>
+    <div class="card-text p-1"><b>West to Feet: </b>@Model.westtofeet</div>
+    <div class="card-text p-1"><b>West to Head:</b> @Model.westtohead</div>
+</div>

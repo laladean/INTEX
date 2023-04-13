@@ -11,7 +11,7 @@
     <div class="card-text p-1"><b>Sex: </b>@Model.sex</div>
     <div class="card-text p-1"><b>Hair Color: </b>@Model.haircolor</div>
     <div class="card-text p-1"><b>Age at death: </b>@Model.ageatdeath</div>
-    <form method="post" asp-controller="Home" asp-action="BurialDetail">
+    <form method="post" asp-controller="Home" asp-action="BurialDetail" asp-route-burialidcomp="@Model.burialidcomp">
         <input type="hidden" asp-for="@Model.burialidcomp" />
         <span class="card-text">
             <button type="submit" class="btn btn-outline-dark btn-sm float-end">Details</button>

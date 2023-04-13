@@ -4,7 +4,33 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to The Way of the Water Buffalo</h1>
+</div>
+
+
+<div class="card-deck">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Over 1,000 mummies unearthed</h5>
+            <p class="card-text">Researchers have excavated more than 1,000 mummies and collected data in field notes, spreadsheets, and simple databases about each mummy's location, physical orientation in the ground, burial depth, and more.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Intriguing details about each mummy</h5>
+            <p class="card-text">Researchers have documented every aspect of each mummy, including hair color, wrapping, sex, age, bone dimensions, and items accompanying the mummy.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Deeper insights gained through analysis</h5>
+            <p class="card-text">Researchers performed a range of analyses on the excavated items, including carbon dating and DNA sequencing, to gain a deeper understanding of the lives of those buried at Fag el-Gamous.</p>
+        </div>
+    </div>
+</div>
+
+<br />
+    <div class="text-center">
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Burials">Burials </a>
 </div>

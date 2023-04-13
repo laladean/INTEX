@@ -5,16 +5,18 @@
 }
 @model IEnumerable<string>
 
+
 <div class="d-grid gap-1">
-@foreach (string aod in Model)
+@foreach (string sex in Model)
 {
     <a asp-controller="Home" asp-action="Burials"
    asp-route-hairColor="@ViewBag.SelectedHairColor"
-   asp-route-ageAtDeath="@aod"
+   asp-route-ageAtDeath="@ViewBag.SelectedAgeAtDeath"
    asp-route-burialDepth="@ViewBag.SelectedBurialDepth"
-   asp-route-bSex="@ViewBag.SelectionSex"
+   asp-route-bSex="@sex"
    asp-route-pageNum="1"
-       class="btn @(ViewBag.SelectedAOD == aod ? "btn-primary" : "btn-outline-secondary")">@aod</a>
+       class="btn @(ViewBag.SelectedAOD == sex ? "btn-primary" : "btn-outline-secondary")">@sex</a>
     <br />
 }
+
 </div>
