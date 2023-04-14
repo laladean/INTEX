@@ -11,7 +11,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             @foreach (var aod in Model)
-            {<a class="dropdown-item" asp-controller="Home" asp-action="Burials"
+            {<a class="dropdown-item" asp-controller="Home" asp-action="CRUD"
    asp-route-hairColor="@ViewBag.SelectedHairColor"
    asp-route-ageAtDeath="@aod"
    asp-route-burialDepth="@ViewBag.SelectedBurialDepth"

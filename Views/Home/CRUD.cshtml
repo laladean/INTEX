@@ -5,9 +5,34 @@
 }
 
 @model List<burialmain>
+
 <div class="container">
+
+
     <h1>Burials Database</h1>
     <a class="btn btn-primary mb-3" asp-controller="Home" asp-action="AddBurial">Add Burial</a>
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-start">
+            <div class="col-2">
+                <vc:hc2></vc:hc2>
+            </div>
+            <div class="col-2">
+                <vc:aod2></vc:aod2>
+            </div>
+            <div class="col-2">
+                <vc:bd2></vc:bd2>
+            </div>
+            <div class="col-2">
+                <vc:sex2></vc:sex2>
+            </div>
+            <div class="col-2">
+                <vc:len2></vc:len2>
+            </div>
+        </div>
+    </div>
+
 
     <table class="table table-bordered table-hover">
         <thead class="table-dark">

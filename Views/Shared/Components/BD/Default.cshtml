@@ -6,19 +6,21 @@
 }
 @model IEnumerable<string>
 
-<div class="d-grid gap-1">
-@foreach (string bd in Model)
-{
-   
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       Burial Depth
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        @foreach (var bd in Model){
 
-    <a asp-controller="Home" asp-action="Burials"
+    <a class="dropdown-item" asp-controller="Home" asp-action="Burials"
    asp-route-hairColor="@ViewBag.SelectedHairColor"
    asp-route-ageAtDeath="@ViewBag.SelectedAgeAtDeath"
    asp-route-burialDepth="@bd"
    asp-route-bSex="@ViewBag.SelectedSex"
        asp-route-stature="@ViewBag.SelectedLength"
-   asp-route-pageNum="1"
-       class="btn @(ViewBag.SelectedBD == bd ? "btn-primary" : "btn-outline-secondary")">@bd</a>
+   asp-route-pageNum="1">@bd</a>
     <br />
 }
+</div>
 </div>
