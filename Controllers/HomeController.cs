@@ -83,10 +83,11 @@ namespace INTEX.Controllers
 
         public IActionResult CRUD(string hairColor, string ageAtDeath, string burialDepth, string bSex, string stature, int pageNum = 1)
         {
-            if (!User.Identity.IsAuthenticated)
-            {
+//          Secures the database and CRUD functionality, restricting it only to users
+//            if (!User.Identity.IsAuthenticated)
+//          {
                 return RedirectToAction("InvalidCredentials");
-            }
+//          }
 
             
             var burials = repo.burialmain.Where(b => (hairColor == null || b.haircolor == hairColor) &&
