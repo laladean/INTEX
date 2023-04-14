@@ -3,133 +3,204 @@
 
 @model INTEX.Models.burialmain
 
-<h2>Enter the burial data</h2>
+<style>
+    /* Add some spacing between form elements */
+    .form-group {
+        margin-bottom: 20px;
+    }
+    /* Darken the color of the form elements */
+    input.form-control, select.form-control {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+</style>
 
-<div>
-    <form method="post">
-        <h3>Identification Numbers</h3>
-        <br />
-        <label>id:</label>
-        <input asp-for="id" />
-        <br />
-        <label>burialid:</label>
-        <input asp-for="burialid" />
-        <br />
-        <label>burialnumber:</label>
-        <input asp-for="burialnumber" />
-        <br />
-        <label>clusternumber:</label>
-        <input asp-for="clusternumber" />
-        <br />
-        <label>burialidcomp:</label>
-        <input asp-for="burialidcomp" />
-        <br />
-        <br />
-        <h3>Orientation</h3>
-        <label>Head Direction:</label>
-        <input asp-for="headdirection" />
-        <br />
-        <label>Squarenorthsouth:</label>
-        <input asp-for="squarenorthsouth" />
-        <br />
-        <label>Northsouth:</label>
-        <input asp-for="northsouth" />
-        <br />
-        <label>Squarenorthsouth:</label>
-        <input asp-for="squarenorthsouth" />
-        <br />
-        <label>Eastwest:</label>
-        <input asp-for="eastwest" />
-        <br />
-        <label>Squareeastwest:</label>
-        <input asp-for="squareeastwest" />
-        <br />
-        <label>Southtohead:</label>
-        <input asp-for="southtohead" />
-        <br />
-        <label>Westtohead:</label>
-        <input asp-for="westtohead" />
-        <br />
-        <label>southtofeet:</label>
-        <input asp-for="southtofeet" />
-        <br />
-        <label>westtofeet:</label>
-        <input asp-for="westtofeet" />
-        <br />
-        <br />
-        <h3>Mummy Information</h3>
-        <label>Sex:</label>
-        <input asp-for="sex" />
-        <br />
-        <label>Hair:</label>
-        <input asp-for="hair" />
-        <br />
-        <label>Hair Color:</label>
-        <input asp-for="haircolor" />
-        <br />
-        <label>Age at Death:</label>
-        <input asp-for="ageatdeath" />
-        <br />
-        <br />
-        <label>Adult/subadult:</label>
-        <input asp-for="adultsubadult" />
-        <br />
+<div class="container">
+    <div class="row justify-content-center">
+<h2 class="mb-4">Enter the burial data</h2>
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="All" class="alert alert-danger"></div>
+            <h3>Identification Numbers</h3>
+            <div class="form-group">
+                <label>id:</label>
+                <input asp-for="id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>burialid:</label>
+                <input asp-for="burialid" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>burialnumber:</label>
+                <input asp-for="burialnumber" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>clusternumber:</label>
+                <input asp-for="clusternumber" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="burialidcomp">burialidcomp:</label>
+                <input asp-for="burialidcomp" class="form-control" />
+            </div>
+
+            <h3>Orientation</h3>
+            <div class="form-group">
+                <label>Head Direction:</label>
+                <input asp-for="headdirection" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Square North-South:</label>
+                <input asp-for="squarenorthsouth" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>North-South:</label>
+                <input asp-for="northsouth" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Square East-West:</label>
+                <input asp-for="squareeastwest" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>East-West:</label>
+                <input asp-for="eastwest" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>South to Head:</label>
+                <input asp-for="southtohead" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>West to Head:</label>
+                <input asp-for="westtohead" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>South to Feet:</label>
+                <input asp-for="southtofeet" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>West to Feet:</label>
+                <input asp-for="westtofeet" class="form-control" />
+            </div>
+
+            <h3>Mummy Information</h3>
+            <div class="form-group">
+                <label>Sex:</label>
+                <input asp-for="sex" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Hair:</label>
+                <input asp-for="hair" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Hair Color:</label>
+                <input asp-for="haircolor" class="form-control" />
+            </div>
+            
+
+            <div class="form-group">
+            <label>Age at Death:</label>
+            <input asp-for="ageatdeath" class="form-control" />
+            </div>
+       
+            <div class="form-group">
+        <label>Adult/Subadult:</label>
+        <input asp-for="adultsubadult" class="form-control"/>
+    </div>
+
+    <div class="form-group">
         <label>Facebundles:</label>
-        <input asp-for="facebundles"/>
-        <br />
-        <label>Preservation:</label>
-        <input asp-for="preservation" />
-        <br />
-        <label>Goods:</label>
-        <input asp-for="goods" />
-        <br />
-        <label>Text:</label>
-        <input asp-for="text" />
-        <br />
-        <label>Wrapping:</label>
-        <input asp-for="wrapping" />
-        <br />
-        <label>Samples Collected:</label>
-        <input asp-for="samplescollected" />
-        <br />
-        <label>burialmaterials:</label>
-        <input asp-for="burialmaterials" />
-        <br />
-        <br />
-        <h3>Location</h3>
-        <label>Area:</label>
-        <input asp-for="area" />
-        <br />
-        <label>Depth:</label>
-        <input asp-for="depth" />
-        <br />
-        <label>length:</label>
-        <input asp-for="length" />
-        <br />
-        <label>shaftnumber:</label>
-        <input asp-for="shaftnumber" />
-        <br />
-        <br />
-        <h3>Documentation</h3>
-        <label>Fieldbook Excavation Year:</label>
-        <input asp-for="fieldbookexcavationyear" />
-        <br />
-        <label>Fieldbook page:</label>
-        <input asp-for="fieldbookpage" />
-        <br />
-        <label>Excavation Recorder:</label>
-        <input asp-for="excavationrecorder" />
-        <br />
-        <label>Date of Excavation:</label>
-        <input asp-for="dateofexcavation" />
-        <br />
-        <label>photos:</label>
-        <input asp-for="photos" />
-        <br />
+        <input asp-for="facebundles" class="form-control"/>
+    </div>
+
+<div class="form-group">
+    <label >Preservation:</label>
+    <input asp-for="preservation" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label>Goods:</label>
+    <input asp-for="goods" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label>Text:</label>
+    <input asp-for="text" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label >Wrapping:</label>
+    <input asp-for="wrapping" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label >Samples Collected:</label>
+    <input asp-for="samplescollected" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label>Burial Materials:</label>
+    <input asp-for="burialmaterials" class="form-control"/>
+</div>
+
+<h3>Location</h3>
+
+<div class="form-group">
+    <label>Area:</label>
+    <input asp-for="area" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label >Depth:</label>
+    <input asp-for="depth" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label >Length:</label>
+    <input asp-for="length" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label >Shaft Number:</label>
+    <input asp-for="shaftnumber" class="form-control"/>
+</div>
+
+<h3>Documentation</h3>
+
+<div class="form-group">
+    <label >Fieldbook Excavation Year:</label>
+    <input asp-for="fieldbookexcavationyear" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label >Fieldbook Page:</label>
+    <input asp-for="fieldbookpage" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label for="excavationrecorder">Excavation Recorder:</label>
+    <input asp-for="excavationrecorder" class="form-control" id="excavationrecorder"/>
+</div>
+
+<div class="form-group">
+    <label >Date of Excavation:</label>
+    <input asp-for="dateofexcavation" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label>Photos:</label>
+    <input asp-for="photos" class="form-control"/>
+    </div>
+
+        <div class="form-group">
         <label>dataexpertinitials:</label>
-        <input asp-for="dataexpertinitials" />
-        <br />
-        <br />
-        <button class="btn btn-success" type="submit">Submit Burial</button>
+        <input asp-for="dataexpertinitials" class="form-control" />
+         </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
     </form>
+</div>
+</div>
+</div>
 </div>

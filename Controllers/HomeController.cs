@@ -4,6 +4,8 @@ using INTEX.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Dynamic;
+
 namespace INTEX.Controllers
 {
     public class HomeController : Controller
@@ -18,7 +20,7 @@ namespace INTEX.Controllers
         }
 
 
-        public IActionResult Burials(string hairColor, string ageAtDeath, string burialDepth, string bSex, int pageNum = 1)
+        public IActionResult Burials(string hairColor, string ageAtDeath, string burialDepth, string bSex, string stature, int pageNum = 1)
 
         {
             int pageSize = 100;
@@ -29,7 +31,8 @@ namespace INTEX.Controllers
                 .Where(b => (hairColor == null || b.haircolor == hairColor) &&
                 (ageAtDeath == null || b.ageatdeath == ageAtDeath) &&
                 (burialDepth == null || b.depth == burialDepth) &&
-                (bSex == null || b.sex == bSex))
+                (bSex == null || b.sex == bSex) &&
+                (stature == null || b.length == stature))
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize),
 
@@ -42,7 +45,8 @@ namespace INTEX.Controllers
                         .Where(b => (hairColor == null || b.haircolor == hairColor) && 
                         (ageAtDeath == null || b.ageatdeath == ageAtDeath) && 
                         (burialDepth == null || b.depth == burialDepth) &&
-                        (bSex == null || b.sex == bSex))
+                        (bSex == null || b.sex == bSex) &&
+                        (stature == null || b.length == stature))
                         .Count()),
                     ProjectsPerPage = pageSize,
                     CurrentPage = pageNum
@@ -54,7 +58,8 @@ namespace INTEX.Controllers
             ViewBag.SelectedAgeAtDeath = ageAtDeath;
             ViewBag.SelectedBurialDepth = burialDepth;
             ViewBag.SelectedSex = bSex;
-            
+            ViewBag.SelectedLength = stature;
+
             return View(x);
         }
 
@@ -72,6 +77,12 @@ namespace INTEX.Controllers
             return View(burial);
         }
 
+        public IActionResult CRUD()
+        {
+            var burials = repo.burialmain.ToList();
+            return View(burials);
+        }
+
         [HttpGet]
         public IActionResult AddBurial()
         {
@@ -81,6 +92,11 @@ namespace INTEX.Controllers
         [HttpPost]
         public IActionResult AddBurial (burialmain bm) {
 
+           if (!ModelState.IsValid)
+            {
+                return View("BurialForm");
+            }
+
             repo.Add(bm);
             repo.SaveChanges();
             
@@ -88,34 +104,41 @@ namespace INTEX.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit (int id)
+        public IActionResult Edit(string burialidcomp)
         {
-            var burial = repo.burialmain.Single(x => x.id == id);
-            return View("BurialForm", burial);
+            var burial = repo.burialmain.FirstOrDefault(b => b.burialidcomp == burialidcomp);
 
+            if (burial == null)
+            {
+                return NotFound();
+            }
+
+            return View("BurialForm", burial);
         }
 
         [HttpPost]
-        public IActionResult Edit (burialmain update)
+        public IActionResult Edit(burialmain update)
         {
             // Makes sure required field have not been forgotten or intentionally left blank in updating
-            if (ModelState.IsValid)
-            {
+           
                 repo.Update(update);
                 repo.SaveChanges();
 
-                return RedirectToAction("MovieList");
-            }
-            else
-            {
-                return View("MovieForm", update);
-            }
+                return RedirectToAction("Confirmation");
+            
+          
         }
 
         [HttpGet]
-        public IActionResult Delete (int id)
+        public IActionResult Delete(string burialidcomp)
         {
-            var burial = repo.burialmain.Single(x => x.id == id);
+            var burial = repo.burialmain.FirstOrDefault(b => b.burialidcomp == burialidcomp);
+
+            if (burial == null)
+            {
+                return NotFound();
+            }
+
             return View(burial);
         }
 
@@ -128,7 +151,14 @@ namespace INTEX.Controllers
         }
 
 
+        public IActionResult Confirmation()
+        {
+          return View();
+        }
+
+
         public IActionResult Unsupervised()
+
         {
             return View();
         }
