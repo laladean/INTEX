@@ -7,10 +7,22 @@
         <vc:aod></vc:aod>
         <vc:bd></vc:bd>
         <vc:sex></vc:sex>
+        <vc:len></vc:len>
 
     </div>
     <div class="col-9">
-        <h1>Burials</h1>
+       <h1>Burials</h1>
+
+       <form method="post" asp-controller="Home" asp-action="CRUD" asp-route-burialidcomp="@Model.burials">
+
+            <input type="hidden" asp-for="@Model.burials" />
+            <span class="card-text">
+                <button type="submit" class="btn btn-outline-dark btn-sm float-end">Database</button>
+            </span>
+        </form>
+    
+
+    
 
         @foreach (burialmain bm in Model.burials)
         {
@@ -22,9 +34,6 @@
              class="btn-group pull-right m-1"></div>
 
     </div>
-    <div>
-        <a asp-controller="Home" asp-action="AddBurial">Add Burial</a>
-
-    </div>
+   
 </div>
 

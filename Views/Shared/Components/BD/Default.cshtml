@@ -15,9 +15,10 @@
    asp-route-hairColor="@ViewBag.SelectedHairColor"
    asp-route-ageAtDeath="@ViewBag.SelectedAgeAtDeath"
    asp-route-burialDepth="@bd"
-   asp-route-bSex="@ViewBag.SelectionSex"
+   asp-route-bSex="@ViewBag.SelectedSex"
+       asp-route-stature="@ViewBag.SelectedLength"
    asp-route-pageNum="1"
-       class="btn @(ViewBag.SelectedAOD == bd ? "btn-primary" : "btn-outline-secondary")">@bd</a>
+       class="btn @(ViewBag.SelectedBD == bd ? "btn-primary" : "btn-outline-secondary")">@bd</a>
     <br />
 }
 </div>
