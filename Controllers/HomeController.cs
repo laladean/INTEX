@@ -77,9 +77,27 @@ namespace INTEX.Controllers
             return View(burial);
         }
 
-        public IActionResult CRUD()
+        public IActionResult CRUD(string hairColor, string ageAtDeath, string burialDepth, string bSex, string stature, int pageNum = 1)
         {
-            var burials = repo.burialmain.ToList();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("InvalidCredentials");
+            }
+
+            
+            var burials = repo.burialmain.Where(b => (hairColor == null || b.haircolor == hairColor) &&
+                (ageAtDeath == null || b.ageatdeath == ageAtDeath) &&
+                (burialDepth == null || b.depth == burialDepth) &&
+                (bSex == null || b.sex == bSex) &&
+                (stature == null || b.length == stature)).ToList();
+
+            ViewBag.SelectedHairColor = hairColor;
+            ViewBag.SelectedAgeAtDeath = ageAtDeath;
+            ViewBag.SelectedBurialDepth = burialDepth;
+            ViewBag.SelectedSex = bSex;
+            ViewBag.SelectedLength = stature;
+
+
             return View(burials);
         }
 
@@ -159,6 +177,11 @@ namespace INTEX.Controllers
 
         public IActionResult Unsupervised()
 
+        {
+            return View();
+        }
+
+        public IActionResult InvalidCredentials()
         {
             return View();
         }

@@ -9,7 +9,7 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             @foreach (var hc in Model)
             {
-                <a class="dropdown-item" asp-controller="Home" asp-action="Burials"
+                <a class="dropdown-item" asp-controller="Home" asp-action="CRUD"
                 asp-route-hairColor="@hc"
                 asp-route-ageAtDeath="@ViewBag.SelectedAgeAtDeath"
                 asp-route-burialDepth="@ViewBag.SelectedBurialDepth"

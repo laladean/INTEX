@@ -1,4 +1,5 @@
-﻿@*
+﻿
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -7,21 +8,19 @@
 
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Sex
+       Burial Depth
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        @foreach (var sex in Model)
-        {
+        @foreach (var bd in Model){
 
-    <a class="dropdown-item" asp-controller="Home" asp-action="Burials"
-       asp-route-hairColor="@ViewBag.SelectedHairColor"
-       asp-route-ageAtDeath="@ViewBag.SelectedAgeAtDeath"
-       asp-route-burialDepth="@ViewBag.SelectedBurialDepth"
-       asp-route-bSex="@sex"
+    <a class="dropdown-item" asp-controller="Home" asp-action="CRUD"
+   asp-route-hairColor="@ViewBag.SelectedHairColor"
+   asp-route-ageAtDeath="@ViewBag.SelectedAgeAtDeath"
+   asp-route-burialDepth="@bd"
+   asp-route-bSex="@ViewBag.SelectedSex"
        asp-route-stature="@ViewBag.SelectedLength"
-       asp-route-pageNum="1">@sex</a>
-   
+   asp-route-pageNum="1">@bd</a>
+    <br />
 }
-
 </div>
 </div>
