@@ -20,7 +20,7 @@ namespace INTEX.Controllers
         }
 
 
-        public IActionResult Burials(string hairColor, string ageAtDeath, string burialDepth, string bSex, string stature, string headDirection, int pageNum = 1)
+        public IActionResult Burials(string hairColor, string ageAtDeath, string burialDepth, string bSex, string stature, int pageNum = 1)
 
         {
             int pageSize = 100;
@@ -32,8 +32,7 @@ namespace INTEX.Controllers
                 (ageAtDeath == null || b.ageatdeath == ageAtDeath) &&
                 (burialDepth == null || b.depth == burialDepth) &&
                 (bSex == null || b.sex == bSex) &&
-                (stature == null || b.length == stature) &&
-                (headDirection == null || b.headdirection == headDirection))
+                (stature == null || b.length == stature))
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize),
 
@@ -44,16 +43,14 @@ namespace INTEX.Controllers
                     && ageAtDeath == null 
                     && burialDepth == null 
                     && bSex == null 
-                    && stature == null 
-                    && headDirection == null)
+                    && stature == null)
                     ? repo.burialmain.Count()
                     : repo.burialmain
                         .Where(b => (hairColor == null || b.haircolor == hairColor) && 
                         (ageAtDeath == null || b.ageatdeath == ageAtDeath) && 
                         (burialDepth == null || b.depth == burialDepth) &&
                         (bSex == null || b.sex == bSex) &&
-                        (stature == null || b.length == stature) &&
-                        (headDirection == null || b.headdirection == headDirection))
+                        (stature == null || b.length == stature))
                         .Count()),
                     ProjectsPerPage = pageSize,
                     CurrentPage = pageNum
@@ -66,7 +63,6 @@ namespace INTEX.Controllers
             ViewBag.SelectedBurialDepth = burialDepth;
             ViewBag.SelectedSex = bSex;
             ViewBag.SelectedLength = stature;
-            ViewBag.SelectedHeadDirection = headDirection;
 
             return View(x);
         }
@@ -85,7 +81,7 @@ namespace INTEX.Controllers
             return View(burial);
         }
 
-        public IActionResult CRUD(string hairColor, string ageAtDeath, string burialDepth, string bSex, string stature, string headDirection, int pageNum = 1)
+        public IActionResult CRUD(string hairColor, string ageAtDeath, string burialDepth, string bSex, string stature, int pageNum = 1)
         {
             if (!User.Identity.IsAuthenticated)
             {
@@ -97,15 +93,13 @@ namespace INTEX.Controllers
                 (ageAtDeath == null || b.ageatdeath == ageAtDeath) &&
                 (burialDepth == null || b.depth == burialDepth) &&
                 (bSex == null || b.sex == bSex) &&
-                (stature == null || b.length == stature) &&
-                headDirection == null || b.headdirection == headDirection).ToList();
+                (stature == null || b.length == stature)).ToList();
 
             ViewBag.SelectedHairColor = hairColor;
             ViewBag.SelectedAgeAtDeath = ageAtDeath;
             ViewBag.SelectedBurialDepth = burialDepth;
             ViewBag.SelectedSex = bSex;
             ViewBag.SelectedLength = stature;
-            ViewBag.SelectedHeadDirection = headDirection;
 
 
 
