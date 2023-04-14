@@ -185,6 +185,11 @@ namespace INTEX.Controllers
           return View();
         }
 
+        public IActionResult Supervised()
+
+        {
+            return View();
+        }
 
         public IActionResult Unsupervised()
 
